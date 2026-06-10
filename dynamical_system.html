@@ -195,36 +195,92 @@ on the boundary between the two possibilities.
     
 <h3>Existence, Uniquenes and A Interesting Failure of Uniquness</h3>
 <p>
-The admissible domain analysis from the previous section also provides a natural 
-starting point for discussing existence and uniqueness of solutions. Since the quantity 
-inside the square root remains nonnegative throughout the physically accessible region, 
-the vector field is continuous wherever the motion is defined. By the Existence Theorem, 
-a solution therefore exists through any admissible initial condition.
+The admissible domain analysis from the previous section also provides a natural starting point for discussing existence 
+and uniqueness of solutions. Since the quantity inside the square root remains nonnegative throughout the physically 
+accessible region, the vector field is continuous wherever the motion is defined. 
+By the Existence Theorem, a solution therefore exists through any admissible initial condition.
 </p>
-    
+
 <p>
-Uniqueness is slightly more subtle. To apply the standard uniqueness theorem, one must 
-examine the derivative of the vector field. Away from the turning point, this derivative remains finite,
-implying local Lipschitz continuity and therefore uniqueness of solutions. Physically,
-this means that once the initial position and direction of motion are specified, the future trajectory is completely determined.
+To investigate uniqueness, we consider the differential equation
 </p>
-    
+
 <p>
-Something interesting happens at the turning point. At the radius where the kinetic energy vanishes, 
-the quantity inside the square root becomes zero. As a result, the derivative of the vector field becomes
-singular and the usual Lipschitz condition fails. Mathematically, the standard uniqueness theorem no longer applies.
+\[
+\dot r = f(r)
+=
+\pm
+\sqrt{\frac{2}{m}
+\left(
+E+\frac{GMm}{r}
+\right)}.
+\]
 </p>
-    
+
 <p>
-What I found fascinating is that this failure occurs precisely at the most physically meaningful point in the motion. 
-In the gravitational picture, the turning point corresponds to the instant when a projectile reaches its maximum height.
-For a brief moment, the radial velocity vanishes before the motion reverses direction and the particle begins falling back toward the Earth.
+The derivative of the vector field is
 </p>
+
 <p>
- Mathematics and Physics are telling us the same story from different perspectives. The point where the uniqueness theorem breaks down is 
-exactly the point where the trajectory changes direction. Therefore, the failure of Lipschitz continuity reflects a genuine physical transition 
-in the motion itself, which is beautiful interpretation, by the way.
+\[
+f'(r)
+=
+\pm
+\frac{GM}
+{r^2
+\sqrt{\frac{2}{m}
+\left(
+E+\frac{GMm}{r}
+\right)}}.
+\]
 </p>
-    
+
+<p>
+Whenever
+</p>
+
+<p>
+\[
+E+\frac{GMm}{r} > 0,
+\]
+</p>
+
+<p>
+the denominator remains finite and the derivative is bounded on any closed interval away from \(r=0\). Consequently, the vector field is locally Lipschitz and uniqueness follows from the standard Existence and Uniqueness Theorem. Physically, this means that once the initial position and direction of motion are specified, the future trajectory is completely determined.
+</p>
+
+<p>
+Something interesting happens at the turning point. Recall from the previous section that for negative energy \(E<0\), there exists a radius
+</p>
+
+<p>
+\[
+r_{\text{turn}}
+=
+-\frac{GMm}{E},
+\]
+</p>
+
+<p>
+where the radial velocity vanishes. At this point,
+</p>
+
+<p>
+\[
+E+\frac{GMm}{r_{\text{turn}}}=0.
+\]
+</p>
+
+<p>
+As a result, the denominator of \(f'(r)\) becomes zero and the derivative blows up. The vector field remains continuous, so existence of solutions is still guaranteed, but local Lipschitz continuity fails. Consequently, the standard uniqueness theorem no longer applies.
+</p>
+
+<p>
+What I found fascinating is that this mathematical failure occurs precisely at the most physically meaningful point in the motion. The turning point corresponds to the instant when a projectile reaches its maximum height above the Earth. For a brief moment the radial velocity vanishes, after which the motion reverses direction and the particle begins falling back toward the central mass.
+</p>
+
+<p>
+Mathematics and physics are telling the same story from different perspectives. The point where the uniqueness theorem ceases to apply is exactly the point where the trajectory changes direction. Rather than being a pathological feature of the model, the failure of Lipschitz continuity reflects a genuine physical transition in the motion itself.
+</p>
 </body>
 </html>
