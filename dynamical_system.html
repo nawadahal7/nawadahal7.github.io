@@ -95,9 +95,54 @@ even after the course ended.
 </p>
 
 <h2>When a One-Dimensional System Isn't Quite One-Dimensional: A Dynamical Systems View of Radial Gravitational Motion</h2>
-
 <p>
+One of the first applications I explored in Dynamical Systems involved the radial motion of a particle moving under gravity.
+At first glance, this appears to be a completely ordinary one-dimensional problem. The particle moves closer to or farther 
+away from a central mass (Earth), 
+and the only state variable is the distance from the origin, usually denoted by $r$.
+</p>
+    
+<p>
+My goal was not to solve the problem exactly, but to understand it from a dynamical systems perspective. 
+Rather than focusing on an explicit solution, 
+I wanted to understand the qualitative behavior of the motion: where trajectories could go, 
+whether turning points existed, and how the structure of the
+system depended on the total mechanical energy.
+</p>
 
+<h3>Energy Changes Everything</h3>
+<p>
+Starting from Newton's law of gravitation, the equation of motion can be written as
+</p>
+<p>
+\[
+m\ddot r = -\frac{GMm}{r^2}.
+\]
+</p>
+<p>
+Multiplying both sides by $\dot r$ and integrating leads directly to conservation of mechanical energy,
+</p>
+<p>
+\[
+E = \frac12 m\dot r^2 - \frac{GMm}{r}.
+\]
+</p>
+<p>
+<p>
+Interpreting the terms, the first term represents kinetic energy,
+while the second represents gravitational potential energy and hence, their sum is 
+the total mechanical energy of the system. Since $E$ appears only as an integration constant, 
+the equation immediately reveals one of the most fundamental principles in classical mechanics, which is the conservation of mechanical energy.
+</p>
+    
+<p>
+This was the first moment where the problem became genuinely interesting to me. 
+Instead of working directly with a second-order differential equation, the motion could now be understood through the geometry and 
+analysis of the energy function $E$. Rather than asking for an explicit solution, I could begin asking qualitative questions like
+Which regions of motion are physically accessible? Where do turning points occur? How does the behavior change as the total energy varies? 
+In a sense, the differential equation had been transformed into a geometric object whose structure already contained much of the information
+about the motion.
+</p>
 </p>
 
 </body>
