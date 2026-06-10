@@ -143,6 +143,38 @@ Which regions of motion are physically accessible? Where do turning points occur
 In a sense, the differential equation had been transformed into a geometric object whose structure already contained much of the information
 about the motion.
 </p>
+
+<h3>Physical Domain and Admissible Motion</h3>
+<p>
+Before discussing existence, uniqueness, or stability, it is worth thinking about the domain of the problem itself. 
+Since $r$ represents the distance from a particle to the central mass, only positive values of $r$ are physically meaningful. 
+Negative values of $r$ would correspond to a negative distance, which has no interpretation in this physical setting.
+</p>
+
+<p>
+The energy formulation also reveals an additional restriction. From
+</p>
+    
+<p>
+$begin:math:display$
+\\dot r \= \\pm \\sqrt\{\\frac\{2\}\{m\}\\left\(E\+\\frac\{GMm\}\{r\}\\right\)\}\,
+$end:math:display$
+</p>
+    
+<p>
+the quantity inside the square root must be nonnegative. This requirement determines 
+which regions of space are accessible for a particle with a given total energy.
+</p>
+
+<p>
+For positive energy, the expression remains nonnegative for all sufficiently large 
+values of $r$, corresponding to trajectories that can escape indefinitely from the central mass. When the energy is exactly zero, the particle lies at the boundary between bound and unbound motion. For negative energy, however, the motion becomes restricted to a finite interval of admissible radii, producing a turning point beyond which the particle cannot travel.
+</p>
+
+<p>
+What I found interesting here is that the energy does much more than provide a conserved 
+quantity. It also determines the geometry of the physically accessible region. Before solving anything, 
+the energy already tells us where motion is possible and where it is forbidden.
 </p>
 
 </body>
