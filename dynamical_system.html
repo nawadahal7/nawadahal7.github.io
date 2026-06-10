@@ -289,10 +289,133 @@ after which the motion reverses direction and the particle begins falling back t
 </p>
 
 <p>
-Mathematics and physics are telling the same story from different perspectives. The point where the uniqueness 
+Mathematics and Physics are telling the same story from different perspectives. The point where the uniqueness 
 theorem fails to apply is exactly the point where the trajectory changes direction (aka turning point of projectile motion). 
 Therefore, the failure of Lipschitz continuity reflects a genuine physical transition in the motion itself, which is beautiful interpretation,
 by the way.
 </p>
+
+<h3>Qualitative Behavior and Fixed Points</h3>
+<p>
+The next natural question is: what do those solutions actually do? Rather than attempting to solve the differential equation explicitly, a dynamical systems approach 
+begins by looking for fixed points and studying the qualitative behavior of trajectories near them.
+</p>
+    
+<p>
+Fixed points occur whenever
+</p>
+<p>
+\[
+\dot r = 0.
+\]
+</p>
+<p>
+Using
+</p>
+<p>
+\[
+\dot r
+=
+\pm
+\sqrt{\frac{2}{m}
+\left(
+E+\frac{GMm}{r}
+\right)},
+\]
+</p>
+<p>
+it follows that fixed points satisfy
+</p>
+<p>
+\[
+E+\frac{GMm}{r}=0.
+\]
+</p>
+<p>
+Solving for \(r\) gives
+</p>
+<p>
+\[
+\hat r
+=
+-\frac{GMm}{E}.
+\]
+</p>
+<p>
+The existence of this fixed point depends entirely on the sign of the energy. When \(E>0\), the resulting value of \(\hat r\) is 
+negative and therefore has no physical meaning. When \(E=0\), no finite fixed point exists. Only when \(E<0\) do we 
+obtain a physically meaningful equilibrium radius,
+</p>
+<p>
+\[
+\hat r
+=
+\frac{GMm}{|E|}.
+\]
+</p>
+<p>
+This observation is consistent with the discussion from the previous section. Negative energy
+corresponds to returning motion, and the fixed point appears precisely at the turning point where the particle reaches its maximum distance from the central mass before reversing direction.
+</p>
+<h3>Why Linearization Fails</h3>
+<p>
+In most one-dimensional dynamical systems, stability is determined by evaluating the derivative
+of the vector field at the fixed point. If the derivative is negative, the equilibrium is stable.
+If the derivative is positive, the equilibrium is unstable.
+</p>
+<p>
+For the present system, however, this approach immediately runs into a problem. The derivative of the vector field is
+</p>
+<p>
+\[
+f'(r)
+=
+\pm
+\frac{GM}
+{r^2
+\sqrt{\frac{2}{m}
+\left(
+E+\frac{GMm}{r}
+\right)}}.
+\]
+</p>
+<p>
+At the fixed point \(\hat r\), the quantity inside the square root vanishes.
+Consequently, the denominator becomes zero and the derivative blows up. The standard linearization test therefore fails completely.
+</p>
+<p>
+Rather than using linearization, the stability must be determined directly from the sign of the vector field itself.
+</p>
+<h3>Phase-Line Analysis</h3>
+<p>
+Since linearization is unavailable, the behavior of solutions can be understood through a phase-line analysis. 
+For \(0<r<\hat r\), the quantity inside the square root remains positive, so the sign of \(\dot r\) is determined entirely by the choice of branch.
+</p>
+    
+<p>
+On the positive branch,
+</p>
+<p>
+\[
+\dot r > 0,
+\]
+</p>
+<p>
+and trajectories move outward toward the turning point. On the negative branch,
+</p>
+<p>
+\[
+\dot r < 0,
+\]
+</p>
+<p>
+and trajectories move inward toward the central mass.
+</p>
+<p>
+The turning point therefore acts as a boundary of the motion. Outward trajectories eventually 
+reach \(\hat r\), where the velocity vanishes and the motion reverses direction. The particle then transitions 
+to the inward branch and begins falling back toward the Earth.
+</p>
+    
 </body>
 </html>
