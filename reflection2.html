@@ -97,7 +97,8 @@ r(t), \qquad \theta(t).
 </p>
 
 <p>
-Here, \(r(t)\) measures the distance from the central mass, while \(\theta(t)\) records the angular position. In polar coordinates, the acceleration has radial and angular components
+Here, \(r(t)\) measures the distance from the central mass, while \(\theta(t)\) records the angular position. 
+In polar coordinates, the acceleration has radial and angular components
 </p>
 
 <p>
@@ -203,6 +204,71 @@ Finally, introducing the radial velocity \(v=\dot r\), the system becomes
 \dot\theta = \frac{\ell}{r^2}.
 \]
 </p>
-    
+
+<h3>State Space Is Not Physical Space</h3>
+
+<p>
+At first glance, the system appears to be three-dimensional because it consists of three first-order differential equations:
+</p>
+
+<p>
+\[
+\dot r = v,
+\qquad
+\dot v = \frac{\ell^2}{r^3}-\frac{GM}{r^2},
+\qquad
+\dot\theta = \frac{\ell}{r^2}.
+\]
+</p>
+
+<p>
+When I first derived these equations, it was tempting to conclude that the motion had somehow become three-dimensional. 
+After all, the system now contains three state variables. However, this interpretation kinda is misleading.
+</p>
+
+<p>
+Physically, the particle still moves entirely within a two-dimensional plane. Nothing about the orbit has become three-dimensional. 
+The additional dimension appears because the original second-order radial equation has been rewritten as a first-order system through the introduction of the 
+    velocity variable
+\(v=\dot r\).
+</p>
+
+<p>
+In other words, state-space dimension counts how many quantities are needed to completely describe the evolution of the system,
+whereas physical dimension describes the geometry of the motion itself. These are related ideas, but they are not the same thing.
+</p>
+
+<p>
+There is another subtle observation hiding inside the equations. Although the system formally contains three state variables, the angular equation
+</p>
+
+<p>
+\[
+\dot\theta=\frac{\ell}{r^2}
+\]
+</p>
+
+<p>
+does not influence the radial dynamics. The variables \(r\) and \(v\) determine the evolution of the system, while \(\theta\) simply records where the particle happens to be along its orbit.
+</p>
+
+<p>
+For this reason, I think of the angular equation as being somewhat "kinematic" in nature. It keeps track of how the orbit 
+sweeps around the origin but it does not affect the structure of the phase portrait itself.
+</p>
+
+<p>
+As a result, the qualitative dynamics can be studied entirely in the \((r,v)\)-plane. 
+The angular equation will return later when discussing the geometry of the orbit and Kepler's laws, 
+but for the phase-plane analysis it behaves more like a "bookkeeping differential equation" than an active dynamical variable.
+</p>
+
+<p>
+This realization was surprisingly memorable for me. Before working through this example, I had never thought carefully about the distinction 
+between physical dimension and state-space dimension. Once I saw it here, it became difficult to unsee. 
+The equations were describing a two-dimensional orbit using a three-dimensional state space, 
+and that subtle distinction completely changed the way I think about dynamical systems.
+</p>
+
 </body>
 </html>
