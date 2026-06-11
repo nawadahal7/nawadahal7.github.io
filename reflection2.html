@@ -785,6 +785,75 @@ the equilibrium is non-hyperbolic.
 The conserved quantity fills in the missing structure, which is solutions remain trapped on closed energy contours around 
 the equilibrium instead of spiraling inward or outward.
 </p>
+
+<h3>Limit Cycles and the Poincaré–Bendixson Theorem</h3>
+<p>
+The energy contour picture also explains why the closed curves in the phase portrait are not limit cycles.
+A limit cycle is an isolated periodic orbit that attracts or repels nearby trajectories. 
+In the present system, this cannot happen because every solution remains on its own energy level set. 
+Since the energy is conserved, trajectories cannot slowly spiral toward a preferred orbit or drift away from it.
+Instead, each initial condition determines a different closed curve, and the motion remains confined to that curve for all time.
+</p>
     
+<p>
+The distinction is subtle but important. The closed trajectories surrounding the equilibrium are periodic orbits, 
+but they are not limit cycles. Nothing attracts nearby trajectories, 
+and nothing repels them. The collection of closed curves arises entirely from conservation of energy.
+</p>
+    
+<p>
+The planar nature of the system imposes an additional restriction.
+The Poincaré–Bendixson Theorem states that sufficiently well-behaved bounded 
+trajectories in two-dimensional systems can only approach a small number of possible
+long-term behaviors, namely equilibria or periodic orbits.
+</p>
+<p>
+In the present setting, the theorem does not reveal anything surprising because the conservation law already confines 
+trajectories to closed energy contours, and the phase portrait shows exactly what the theorem predicts: solutions repeatedly
+travel around closed loops without approaching the equilibrium and without exhibiting more complicated behavior.
+</p>
+<p>
+What I found interesting is that the theorem also highlights a limitation of planar systems.
+Once energy conservation and the two-dimensional geometry are taken into account,
+there is no chance for genuinely complicated long-term dynamics like chaos. The motion is structured, predictable, and periodic.
+</p>
+    
+<h3>Lyapunov Stability of the Equilibrium</h3>
+<p>
+The energy function provides a natural Lyapunov function for the equilibrium. Since the equilibrium does not occur at zero energy,
+it is convenient to shift the energy by a constant and define
+</p>
+<p>
+\[
+V(r,v)=E(r,v)-E(\hat r,0).
+\]
+</p>
+<p>
+This shift changes neither the physics nor the geometry of the system. It simply normalizes the equilibrium so that
+</p>
+<p>
+\[
+V(\hat r,0)=0.
+\]
+</p>
+<p>
+Furthermore, \(V(r,v)\) is positive for nearby points and remains constant along trajectories. 
+Consequently, the equilibrium is Lyapunov stable, which means solutions that begin sufficiently close 
+to the equilibrium remain close for all future time.
+</p>
+<p>
+However, the equilibrium is not asymptotically stable. Since the energy never decreases, trajectories cannot approach 
+the equilibrium as time increases. Instead, they continue moving around the surrounding energy contours indefinitely.
+And this is exactly the behavior expected from a linearized-center phase portrait.
+</p>
+<p>
+At this point, the qualitative picture is essentially complete. Energy conservation explains the closed curves, 
+Lyapunov theory explains the stability of the equilibrium, and the Poincaré–Bendixson Theorem rules out the possibility of chaos
+within this planar setting.
+</p>
+<p>
+Naturally, this raises a new question. If two-dimensional systems are so heavily constrained, where does chaos come from? That question became the starting point for my next reflection.
+</p>
+
 </body>
 </html>
