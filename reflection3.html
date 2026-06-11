@@ -190,25 +190,23 @@ The idea I eventually settled on was surprisingly simple. Earlier, I introduced 
 which measures the separation between two nearby trajectories.
 </p>
 <p>
-At first, I only wanted to track this quantity and observe how it evolved. The usual story in chaos theory is that nearby trajectories separate over time, so my original goal was simply to monitor that growth numerically. However, after thinking about it for a while, a different question started bothering me.
+At first, I only wanted to track this quantity and observe how it evolved.
+The usual explanation of chaos focuses heavily on the growth of nearby perturbations, 
+so my original goal was simply to monitor that growth numerically.
+</p>
+<p>
+However, after thinking about it for a while, a different question started bothering me.
 </p>
 <p>
 What if the perturbation itself were allowed to influence the dynamics?
 </p>
 <p>
-Instead of merely measuring the separation between two nearby trajectories, what if that information were fed back into the system and used to modify the evolution equations? If sensitive dependence on initial conditions is truly one of the central signatures of chaos, then reducing the growth of perturbations should significantly change the observed behavior.
+Instead of merely measuring the separation between two nearby trajectories,
+what if that information were fed back into the system and used to modify the equations themselves?
 </p>
 <p>
-My first attempt was fairly straightforward. I introduced correction terms proportional to the differences between two nearby trajectories and added them directly into the Lorenz equations. In MATLAB, this produced some reduction in the separation, but the effect was weaker than I expected. The perturbation was being suppressed, but not enough to clearly reveal what was happening.
-</p>
-<p>
-That was when the idea of recursive feedback appeared.
-</p>
-<p>
-Instead of using the perturbation only once, I repeatedly fed the perturbation information back into the correction itself. Each correction step slightly reduced the current perturbation and then reused the remaining information to generate another correction. The process was repeated several times during each time step, creating a simple recursive feedback mechanism.
-</p>
-<p>
-To implement this idea, I first defined
+My first attempt was fairly straightforward. I introduced correction terms proportional 
+to the differences between two nearby trajectories,
 </p>
 <p>
 \[
@@ -216,48 +214,118 @@ To implement this idea, I first defined
 \qquad
 \delta_y=y_2-y_1,
 \qquad
-\delta_z=z_2-z_1.
+\delta_z=z_2-z_1,
 \]
 </p>
 <p>
-The corrected system then took the form
+and subtracted them from the Lorenz equations. The result did reduce the separation between trajectories, 
+but the effect was weaker than I expected. The perturbation was being suppressed, 
+but not enough to clearly reveal what was happening.
+</p>
+<p>
+That was when the recursive idea appeared.
+Instead of applying the perturbation information only once, 
+I repeatedly fed it back into the correction itself. 
+The basic idea was that each correction should generate another smaller correction, 
+which in turn generates another one, creating a short feedback chain during each time step.
+</p>
+<p>
+To implement this, I introduced two parameters:
+</p>
+<p>
+\[
+\alpha > 0,
+\]
+</p>
+<p>
+which controls the strength of each correction step, and
+</p>
+<p>
+\[
+K \in \mathbb{N},
+\]
+</p>
+<p>
+which controls the recursion depth, or equivalently, 
+how many times the perturbation information is recycled before the correction is applied.
+</p>
+<p>
+Starting from the perturbation vector
+</p>
+<p>
+\[
+\delta
+=
+(\delta_x,\delta_y,\delta_z),
+\]
+</p>
+<p>
+I repeatedly accumulated correction terms according to
+</p>
+<p>
+\[
+\text{corr}
+\leftarrow
+\text{corr}
++
+\alpha\,\delta,
+\]
+</p>
+<p>
+while simultaneously reducing the perturbation through
+</p>
+<p>
+\[
+\delta
+\leftarrow
+\delta-\alpha\,\delta\,\Delta t.
+\]
+</p>
+<p>
+This process was repeated \(K\) times before the final correction was
+applied to the Lorenz equations. In this way, the perturbation information 
+was not used only once; it was recursively recycled through multiple feedback stages.
+</p>
+<p>
+The corrected system therefore became
 </p>
 <p>
 \[
 \dot x
 =
-\sigma(y-x)-k\delta_x,
+\sigma(y-x)-\text{corr}_x,
 \]
 </p>
 <p>
 \[
 \dot y
 =
-x(\rho-z)-y-k\delta_y,
+x(\rho-z)-y-\text{corr}_y,
 \]
 </p>
 <p>
 \[
 \dot z
 =
-xy-\beta z-k\delta_z,
+xy-\beta z-\text{corr}_z.
 \]
 </p>
 <p>
-where \(k>0\) controls the strength of the feedback. In the actual MATLAB implementation, 
-these correction terms were accumulated recursively over several iterations, producing a 
-stronger suppression effect than a single correction step alone.
+Although this construction was motivated entirely by curiosity rather than by mathematics and physics, 
+it gave me a way to experimentally manipulate perturbation growth while leaving the underlying Lorenz dynamics intact.
 </p>
 <p>
-The goal was never to construct a physically meaningful model or develop a rigorous
-chaos-control strategy. This was simply a mathematical experiment driven by curiosity. 
-If sensitive dependence on initial conditions is the primary mechanism behind chaotic behavior,
-then reducing perturbation growth should dramatically alter the dynamics. On the other hand, if the 
-large-scale structure survives, then perturbation growth may be only one visible manifestation of a deeper geometric phenomenon.
+The goal was not to create a rigorous chaos-control method. Instead, I wanted to test a much simpler idea.
+If sensitive dependence on initial conditions is truly the dominant mechanism behind chaos, 
+then reducing perturbation growth should dramatically alter the observed dynamics. On the other hand, 
+if the large-scale structure survives, then perturbation growth may be only one visible manifestation
+of a deeper geometric process.
 </p>
 <p>
-With this modified system in hand, I then compared the original Lorenz dynamics against 
-the recursively corrected dynamics through a series of numerical experiments.
+With this modified system in hand, I then compared the original Lorenz dynamics 
+against the recursively corrected dynamics through a series of numerical experiments.
+</p>
+
 </p>
 <h3>Numerical Experiments and Simulation</h3>
 <p>
