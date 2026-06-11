@@ -324,9 +324,10 @@ of a deeper geometric process.
 
 <h3>Numerical Experiments and Simulations</h3>
 <p>
-With the recursively corrected system in hand, 
-I compared its behavior against the original Lorenz system. 
-
+With the recursively corrected system in hand, I started comparing it against 
+the original Lorenz system. At this point, I was no longer interested in the 
+trajectories themselves. What I really wanted to understand was whether reducing 
+perturbation growth would fundamentally change the behavior of the system.
 </p>
 <h4>Comparison of the Attractors</h4>
 <img src="lorenz_side_by_side.png" class="figure" alt="Side-by-side comparison of the original Lorenz system and recursive feedback system">
@@ -334,15 +335,18 @@ I compared its behavior against the original Lorenz system.
 Comparison between the original Lorenz attractor and the recursively corrected system.
 </p>
 <p>
-This was the first result that genuinely surprised me. If perturbation growth is the dominant 
-mechanism behind chaotic behavior, then strongly suppressing perturbations should significantly 
-alter the observed dynamics. Instead, the familiar butterfly-shaped geometry remained recognizable.
+This was the first result that genuinely surprised me. Going into the experiment, I 
+expected that reducing perturbation growth would eventually destroy the familiar 
+butterfly structure. Instead, much of the butterfly geometry remained recognizable.
 </p>
 <p>
-The corrected system does not collapse into an equilibrium, a periodic orbit, or some obviously trivial trajectory.
-Although the trajectories themselves are modified, the large-scale organization of the flow survives. 
-This was my first indication that the exponential growth of perturbations may not be the deepest feature of chaos. 
-Something geometric appeared to persist even after the perturbation dynamics were altered.
+The corrected system does not collapse into an equilibrium or some 
+obviously trivial trajectory. The paths themselves are different, but 
+the large-scale organization of the flow survives. This was the first indication 
+that the amplification of perturbations may not be the deepest feature of chaos.
+</p>
+<p>
+Something geometric seemed to persist even after the perturbation dynamics had been significantly altered.
 </p>
 <h4>Logarithmic Separation Between Nearby Trajectories</h4>
 <img src="lorenz_log_distance.png" class="figure" alt="Logarithmic separation between nearby Lorenz trajectories">
@@ -350,13 +354,16 @@ Something geometric appeared to persist even after the perturbation dynamics wer
 Logarithmic separation between nearby trajectories for the original and recursively corrected systems.
 </p>
 <p>
-The most dramatic difference appears when tracking the separation between nearby trajectories. 
-In the original Lorenz system, the distance grows rapidly, reflecting the familiar sensitive 
-dependence on initial conditions associated with chaotic motion. 
-In contrast, the recursively corrected system drives the separation toward extremely small values.
+The biggest difference appears when tracking the separation between nearby trajectories. 
+In the original Lorenz system, the distance grows rapidly, which is exactly the behavior 
+usually associated with sensitive dependence on initial conditions.
 </p>
 <p>
-This behavior can be understood through linearization. For nearby trajectories, the perturbation approximately satisfies
+In the recursively corrected system, however, the separation collapses by many orders of 
+magnitude. Numerically, it eventually becomes so small that it approaches the limits of floating-point precision.
+</p>
+<p>
+This can be understood using linearization. For nearby trajectories, the perturbation approximately satisfies
 </p>
 <p>
 \[
@@ -366,11 +373,11 @@ J(X(t))\,\delta X,
 \]
 </p>
 <p>
-where \(J(X(t))\) is the Jacobian matrix of the Lorenz vector field evaluated along a trajectory.
+where \(J(X(t))\) is the Jacobian matrix of the Lorenz vector field along the trajectory.
 </p>
 <p>
-The recursive feedback introduces an additional correction that opposes perturbation growth. 
-At a qualitative level, the modified perturbation equation takes the form
+The recursive correction introduces an additional term that opposes perturbation 
+growth. At a qualitative level, the modified perturbation equation behaves like
 </p>
 <p>
 \[
@@ -380,14 +387,16 @@ At a qualitative level, the modified perturbation equation takes the form
 \]
 </p>
 <p>
-where \(\gamma\) depends on the feedback strength \(\alpha\) and recursion depth \(K\). 
-In other words, the feedback effectively shifts the local growth rates of perturbations in 
-a negative direction. This provides a natural explanation for why the separation collapses so dramatically in the simulations.
+where \(\gamma\) depends on the feedback strength \(\alpha\) and recursion depth \(K\).
 </p>
 <p>
-What is particularly interesting is that the large-scale butterfly geometry survives despite this 
-change in the perturbation dynamics. This suggests that the visible growth of perturbations may be 
-only one manifestation of a deeper geometric mechanism.
+From an eigenvalue point of view, the correction effectively shifts the local growth rates 
+in a negative direction. This provides a natural explanation for why the perturbation becomes so small in the simulations.
+</p>
+<p>
+What surprised me was that this dramatic change in perturbation growth did not immediately 
+destroy the butterfly geometry. That observation pushed me back toward the question that 
+started this reflection: maybe perturbation growth is only one visible consequence of something deeper happening inside the flow.
 </p>
 <h4>Finite-Time Separation Rate</h4>
 <img src="lorenz_separation_rate.png" class="figure" alt="Finite-time separation rate for the original and recursive feedback Lorenz systems">
@@ -395,14 +404,15 @@ only one manifestation of a deeper geometric mechanism.
 Finite-time separation rate for the original and recursively corrected systems.
 </p>
 <p>
-To better understand the evolution of the perturbation, I also examined a finite-time growth rate,
+To get another view of the perturbation dynamics, I also examined the finite-time growth rate
 </p>
 <p>
 \[
 \lambda(t)
 =
 \frac{1}{t}
-\log\!\left(
+\log
+\left(
 \frac{\|\delta X(t)\|}
 {\|\delta X(0)\|}
 \right).
@@ -410,21 +420,19 @@ To better understand the evolution of the perturbation, I also examined a finite
 </p>
 <p>
 This quantity is closely related to the idea of a finite-time Lyapunov exponent. 
-Positive values indicate that nearby trajectories are separating, while negative values indicate contraction.
+Positive values indicate local growth of perturbations, while negative values indicate local contraction.
 </p>
 <p>
 For the original Lorenz system, the growth rate remains positive for much of the simulation, 
-reflecting persistent perturbation amplification. For the recursively corrected system,
-the growth rate initially becomes negative and then approaches zero from below.
+reflecting the tendency of nearby trajectories to separate. For the recursively corrected system, 
+the growth rate initially becomes negative and then gradually approaches zero from below.
 </p>
 <p>
-This behavior is consistent with the logarithmic separation plot.
-The perturbation rapidly contracts and eventually becomes extremely small. 
-Once the separation reaches that regime, there is very little remaining growth 
-or decay to measure, causing the finite-time rate to approach zero.
+This is consistent with the logarithmic separation plot. Once the perturbation becomes extremely small, 
+there is very little remaining growth or decay to measure. As a result, the finite-time rate naturally approaches zero.
 </p>
 <p>
-What I found most interesting was that both systems appear to approach the same limiting value,
+What I found especially interesting was that both curves appear to approach the same limiting value,
 </p>
 <p>
 \[
@@ -432,10 +440,18 @@ What I found most interesting was that both systems appear to approach the same 
 \]
 </p>
 <p>
-but from opposite directions. The original system approaches from above 
-after long-time averaging, while the corrected system approaches from 
-below after suppressing the perturbation. Although this observation is 
-purely numerical, it further reinforced the idea that perturbation growth alone may not fully explain the geometry of chaotic motion.
+but from opposite directions. The original system approaches from above after long-time averaging, 
+while the corrected system approaches from below after suppressing the perturbation.
+</p>
+<p>
+Of course, this observation is entirely numerical. However, it reinforced the same idea that had been 
+bothering me from the beginning. The growth of perturbations is clearly important, but it may not be the entire story.
+</p>
+<p>
+The simulations did not prove anything about topology or geometry. However, they did push me toward thinking 
+about chaos in a different way. At this point, I know very little topology, so this is mostly intuition rather 
+than mathematics. Still, these experiments made me wonder whether the real mechanism behind chaos has more to 
+do with the geometry of the flow—stretching, folding, and recurrence—than with perturbation growth alone.
 </p>
     
 </body>
