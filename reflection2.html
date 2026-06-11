@@ -84,5 +84,125 @@ variable $\theta(t)$, the description of the motion is incomplete. So, based on 
 component of the motion as well.
 </p>
 
+<h3>Deriving the Planar Model</h3>
+
+<p>
+To describe the motion in the plane, I use polar coordinates. The position of the particle is determined by two functions:
+</p>
+
+<p>
+\[
+r(t), \qquad \theta(t).
+\]
+</p>
+
+<p>
+Here, \(r(t)\) measures the distance from the central mass, while \(\theta(t)\) records the angular position. In polar coordinates, the acceleration has radial and angular components
+</p>
+
+<p>
+\[
+a_r = \ddot r - r\dot\theta^2,
+\qquad
+a_\theta = r\ddot\theta + 2\dot r\dot\theta.
+\]
+</p>
+
+<p>
+Since gravity acts only in the radial direction, Newton's second law gives
+</p>
+
+<p>
+\[
+m(\ddot r - r\dot\theta^2) = -\frac{GMm}{r^2},
+\qquad
+m(r\ddot\theta + 2\dot r\dot\theta)=0.
+\]
+</p>
+
+<p>
+The angular equation simplifies to
+</p>
+
+<p>
+\[
+r\ddot\theta + 2\dot r\dot\theta = 0.
+\]
+</p>
+
+<p>
+Multiplying by \(r\), this becomes
+</p>
+
+<p>
+\[
+r^2\ddot\theta + 2r\dot r\dot\theta = 0.
+\]
+</p>
+
+<p>
+But the left-hand side is exactly
+</p>
+
+<p>
+\[
+\frac{d}{dt}\left(r^2\dot\theta\right)=0.
+\]
+</p>
+
+<p>
+Therefore,
+</p>
+
+<p>
+\[
+r^2\dot\theta = \ell,
+\]
+</p>
+
+<p>
+where \(\ell\) is the conserved angular momentum per unit mass. Solving for \(\dot\theta\), we get
+</p>
+
+<p>
+\[
+\dot\theta = \frac{\ell}{r^2}.
+\]
+</p>
+
+<p>
+Substituting this into the radial equation gives
+</p>
+
+<p>
+\[
+\ddot r - r\left(\frac{\ell}{r^2}\right)^2 = -\frac{GM}{r^2}.
+\]
+</p>
+
+<p>
+Simplifying,
+</p>
+
+<p>
+\[
+\ddot r = \frac{\ell^2}{r^3} - \frac{GM}{r^2}.
+\]
+</p>
+
+<p>
+Finally, introducing the radial velocity \(v=\dot r\), the system becomes
+</p>
+
+<p>
+\[
+\dot r = v,
+\qquad
+\dot v = \frac{\ell^2}{r^3} - \frac{GM}{r^2},
+\qquad
+\dot\theta = \frac{\ell}{r^2}.
+\]
+</p>
+    
 </body>
 </html>
