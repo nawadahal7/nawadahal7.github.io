@@ -187,15 +187,28 @@ The idea I eventually settled on was surprisingly simple. Earlier, I introduced 
 \]
 </p>
 <p>
-which measures the separation between two nearby trajectories. 
+which measures the separation between two nearby trajectories.
 </p>
 <p>
-If the perturbation is responsible for the visible divergence between trajectories, 
-what happens if that information is fed back into the system? In other words, instead of 
-merely measuring the separation, could the perturbation itself influence the evolution equations?
+At first, I only wanted to track this quantity and observe how it evolved. The usual story in chaos theory is that nearby trajectories separate over time, so my original goal was simply to monitor that growth numerically. However, after thinking about it for a while, a different question started bothering me.
 </p>
 <p>
-To explore this idea, I considered two nearby Lorenz trajectories and defined
+What if the perturbation itself were allowed to influence the dynamics?
+</p>
+<p>
+Instead of merely measuring the separation between two nearby trajectories, what if that information were fed back into the system and used to modify the evolution equations? If sensitive dependence on initial conditions is truly one of the central signatures of chaos, then reducing the growth of perturbations should significantly change the observed behavior.
+</p>
+<p>
+My first attempt was fairly straightforward. I introduced correction terms proportional to the differences between two nearby trajectories and added them directly into the Lorenz equations. In MATLAB, this produced some reduction in the separation, but the effect was weaker than I expected. The perturbation was being suppressed, but not enough to clearly reveal what was happening.
+</p>
+<p>
+That was when the idea of recursive feedback appeared.
+</p>
+<p>
+Instead of using the perturbation only once, I repeatedly fed the perturbation information back into the correction itself. Each correction step slightly reduced the current perturbation and then reused the remaining information to generate another correction. The process was repeated several times during each time step, creating a simple recursive feedback mechanism.
+</p>
+<p>
+To implement this idea, I first defined
 </p>
 <p>
 \[
@@ -207,7 +220,7 @@ To explore this idea, I considered two nearby Lorenz trajectories and defined
 \]
 </p>
 <p>
-I then introduced simple feedback terms proportional to these differences. The resulting modified system became
+The corrected system then took the form
 </p>
 <p>
 \[
@@ -231,14 +244,20 @@ xy-\beta z-k\delta_z,
 \]
 </p>
 <p>
-where \(k>0\) controls the strength of the correction.
+where \(k>0\) controls the strength of the feedback. In the actual MATLAB implementation, 
+these correction terms were accumulated recursively over several iterations, producing a 
+stronger suppression effect than a single correction step alone.
 </p>
 <p>
-The goal was not to create a physically meaningful model or to develop a rigorous theory of chaos control. 
-Instead, this was simply a mathematical experiment. If sensitive dependence on initial conditions is truly 
-the central mechanism behind chaos, then suppressing the growth of perturbations should dramatically
-alter the dynamics. On the other hand, if the qualitative structure survives,
-then the perturbation may only be one visible manifestation of a deeper geometric phenomenon, which is what my gut intuition was telling me.
+The goal was never to construct a physically meaningful model or develop a rigorous
+chaos-control strategy. This was simply a mathematical experiment driven by curiosity. 
+If sensitive dependence on initial conditions is the primary mechanism behind chaotic behavior,
+then reducing perturbation growth should dramatically alter the dynamics. On the other hand, if the 
+large-scale structure survives, then perturbation growth may be only one visible manifestation of a deeper geometric phenomenon.
+</p>
+<p>
+With this modified system in hand, I then compared the original Lorenz dynamics against 
+the recursively corrected dynamics through a series of numerical experiments.
 </p>
 <h3>Numerical Experiments and Simulation</h3>
 <p>
