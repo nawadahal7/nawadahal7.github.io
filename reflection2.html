@@ -339,7 +339,182 @@ u'' + u = \frac{GM}{\ell^2}.
 <p>
 The full geometric solution of this equation leads into celestial mechanics and the theory of conic sections, which is
 beyond the scope of this note. However, the key point is that the familiar geometric laws of orbital motion are already 
-encoded and emerges naturally while studying the dynamics
+encoded and emerges naturally while studying the dynamics.
+
+<h3>The Reduced Planar System</h3>
+<p>
+Up to this point, the discussion has focused primarily on deriving the equations of motion.
+The next natural question is no longer how the system is obtained, but rather what the system does.
+This is where the viewpoint of dynamical systems becomes useful. Instead of searching for explicit solutions,
+the goal is to understand the qualitative behavior of all possible solutions at once.
+</p>
+<p>
+As discussed in the previous section, the angular equation does not influence the radial dynamics.
+Therefore the qualitative behavior is completely determined by the reduced system
+</p>
+<p>
+\[
+\dot r = v,
+\qquad
+\dot v =
+\frac{\ell^2}{r^3}
+-
+\frac{GM}{r^2}.
+\]
+</p>
+<h3>Nullclines and Equilibrium</h3>
+<p>
+A useful first step in understanding a nonlinear system is locating its nullclines. 
+The \(r\)-nullcline is obtained from \(\dot r=0\), giving
+</p>
+<p>
+\[
+v=0.
+\]
+</p>
+<p>
+The \(v\)-nullcline is obtained from \(\dot v=0\):
+</p>
+<p>
+\[
+\frac{\ell^2}{r^3}
+-
+\frac{GM}{r^2}
+=
+0.
+\]
+</p>
+<p>
+Assuming \(r>0\), this simplifies to
+</p>
+<p>
+\[
+r_0
+=
+\frac{\ell^2}{GM}.
+\]
+</p>
+<p>
+The unique equilibrium point occurs at the intersection of the two nullclines:
+</p>
+<p>
+\[
+(r_0,v_0)
+=
+\left(
+\frac{\ell^2}{GM},
+0
+\right).
+\]
+</p>
+<h3>Linearization and Center Behavior</h3>
+<p>
+To understand the local behavior near the equilibrium, I linearize the system 
+by computing the Jacobian matrix of the vector field.
+</p>
+<p>
+Let
+</p>
+<p>
+\[
+f(r,v)=v,
+\qquad
+g(r,v)
+=
+\frac{\ell^2}{r^3}
+-
+\frac{GM}{r^2}.
+\]
+</p>
+<p>
+The Jacobian is
+</p>
+<p>
+\[
+J(r,v)
+=
+\begin{pmatrix}
+\frac{\partial f}{\partial r}
+&
+\frac{\partial f}{\partial v}
+\\
+\frac{\partial g}{\partial r}
+&
+\frac{\partial g}{\partial v}
+\end{pmatrix}.
+\]
+</p>
+<p>
+Computing the partial derivatives gives
+</p>
+<p>
+\[
+\frac{\partial f}{\partial r}=0,
+\qquad
+\frac{\partial f}{\partial v}=1,
+\]
+</p>
+<p>
+\[
+\frac{\partial g}{\partial r}
+=
+-\frac{3\ell^2}{r^4}
++
+\frac{2GM}{r^3},
+\qquad
+\frac{\partial g}{\partial v}=0.
+\]
+</p>
+<p>
+Evaluating at the equilibrium \(r_0=\ell^2/(GM)\) yields
+</p>
+<p>
+\[
+J(r_0,v_0)
+=
+\begin{pmatrix}
+0 & 1\\
+-\frac{(GM)^4}{\ell^6} & 0
+\end{pmatrix}.
+\]
+</p>
+<p>
+The characteristic equation becomes
+</p>
+<p>
+\[
+\lambda^2
++
+\frac{(GM)^4}{\ell^6}
+=
+0,
+\]
+</p>
+<p>
+with eigenvalues
+</p>
+<p>
+\[
+\lambda_{1,2}
+=
+\pm i\frac{(GM)^2}{\ell^3}.
+\]
+</p>
+<p>
+The eigenvalues are purely imaginary. Equivalently,
+</p>
+<p>
+\[
+\operatorname{tr}(J)=0,
+\qquad
+\det(J)>0.
+\]
+</p>
+<p>
+Both viewpoints lead to the same conclusion: the equilibrium is a center. Nearby trajectories 
+neither converge toward the equilibrium nor diverge away from it. Instead, they move around it in closed loops.
+</p>
+<!-- INSERT PHASE PORTRAIT FIGURE HERE -->
 </p>
 </body>
 </html>
