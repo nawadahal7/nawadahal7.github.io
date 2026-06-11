@@ -515,6 +515,7 @@ Both viewpoints lead to the same conclusion: the equilibrium is a center. Nearby
 neither converge toward the equilibrium nor diverge away from it. Instead, they move around it in closed loops.
 </p>
 
+<h3>Phase Portrait and Center Dynamics</h3>
 <p>
 This classification is easier to understand visually through the phase portrait. The vector field suggests rotation around the equilibrium, and the sample trajectories form closed curves rather than spiraling inward or outward.
 </p>
@@ -526,7 +527,49 @@ Phase portrait in the \((r,v)\)-plane.
 </p>
 
 <p>
-At first glance, this agrees with the linearized picture: the equilibrium behaves like a center. However, there is an important issue. Since the eigenvalues are purely imaginary, the equilibrium is non-hyperbolic. Therefore, the Hartman-Grobman Theorem does not apply.
+The phase portrait suggests that the equilibrium behaves like a center. 
+Nearby trajectories form closed curves surrounding the fixed point, and the 
+linearization predicts purely oscillatory motion. At first glance, it is 
+tempting to conclude that the nonlinear system behaves exactly like its linear approximation.
+</p>
+
+<p>
+However, this is precisely where one of the most important theorems 
+in dynamical systems becomes relevant. The Hartman–Grobman Theorem 
+states that near a hyperbolic equilibrium point, the nonlinear system is 
+topologically equivalent to its linearization. In other words, the local 
+behavior can be understood completely by studying the Jacobian matrix.
+</p>
+
+<p>
+The key hypothesis is hyperbolicity. An equilibrium is hyperbolic only when none of the eigenvalues of the Jacobian have zero real part.
+</p>
+
+<p>
+In the present system, the eigenvalues are
+</p>
+
+<p>
+\[
+\lambda = \pm i\sqrt{\frac{GM}{\hat r^3}},
+\]
+</p>
+
+<p>
+which are purely imaginary. Their real parts are exactly zero. 
+Consequently, the equilibrium is non-hyperbolic, and the Hartman–Grobman Theorem does not apply.
+</p>
+
+<p>
+This means that the phase portrait shown above cannot be justified solely from the linearization.
+The Jacobian correctly suggests rotational behavior, but it does not explain why trajectories 
+remain on closed curves rather than spiraling inward or outward. To understand that structure, an additional idea is needed.
+</p>
+
+<p>
+That idea comes from conservation. The system possesses a conserved energy, 
+and as will be seen in the next section, the geometry of the phase portrait 
+is ultimately determined by the level sets of that energy function.
 </p>
 </body>
 </html>
