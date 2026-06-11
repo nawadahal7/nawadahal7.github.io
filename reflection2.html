@@ -270,5 +270,76 @@ The equations were describing a two-dimensional orbit using a three-dimensional 
 and that subtle distinction completely changed the way I think about dynamical systems.
 </p>
 
+<h3>Kepler's Laws from the Angular Equation</h3>
+
+<p>
+Although the angular equation does not affect the radial phase portrait in the \((r,v)\)-plane, it is not useless. In fact, it contains important geometric information about the orbit.
+</p>
+
+<p>
+From the derivation above, angular momentum conservation gives
+</p>
+
+<p>
+\[
+r^2\dot\theta = \ell.
+\]
+</p>
+
+<p>
+During a small angular displacement \(d\theta\), the radius vector sweeps out a small sector of area
+</p>
+
+<p>
+\[
+dA = \frac{1}{2}r^2\,d\theta.
+\]
+</p>
+
+<p>
+Dividing by \(dt\), we obtain the rate at which area is swept out:
+</p>
+
+<p>
+\[
+\frac{dA}{dt}
+=
+\frac{1}{2}r^2\dot\theta.
+\]
+</p>
+
+<p>
+Using \(r^2\dot\theta=\ell\), this becomes
+</p>
+
+<p>
+\[
+\frac{dA}{dt}
+=
+\frac{\ell}{2}.
+\]
+</p>
+
+<p>
+Since \(\ell\) is constant, the area sweep rate is constant. This is exactly Kepler's Second Law: the radius vector sweeps out equal areas in equal times.
+</p>
+
+<p>
+Kepler's First Law also emerges from the same polar-coordinate formulation. Substituting
+\(\dot\theta=\ell/r^2\) into the radial equation and introducing the standard change of variables
+\(u(\theta)=1/r\) leads to
+</p>
+
+<p>
+\[
+u'' + u = \frac{GM}{\ell^2}.
+\]
+</p>
+
+<p>
+The full geometric solution of this equation leads into celestial mechanics and the theory of conic sections, which is
+beyond the scope of this note. However, the key point is that the familiar geometric laws of orbital motion are already 
+encoded and emerges naturally while studying the dynamics
+</p>
 </body>
 </html>
