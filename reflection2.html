@@ -572,5 +572,200 @@ That idea comes from conservation. The system possesses a conserved energy,
 and as will be seen in the next section, the geometry of the phase portrait 
 is ultimately determined by the level sets of that energy function.
 </p>
+
+<h3>Conservation Creates Geometry</h3>
+
+<p>
+Since the Hartman-Grobman Theorem does not apply, linearization alone cannot explain the closed curves in the phase portrait. 
+To understand why the trajectories remain trapped on loops, we need another source of structure.
+A natural question is whether the system has a conserved quantity.
+</p>
+
+<p>
+Starting from the reduced system,
+</p>
+
+<p>
+\[
+\dot r = v,
+\qquad
+\dot v =
+\frac{\ell^2}{r^3}
+-
+\frac{GM}{r^2},
+\]
+</p>
+
+<p>
+we can eliminate time by writing
+</p>
+
+<p>
+\[
+\frac{dv}{dr}
+=
+\frac{\dot v}{\dot r}
+=
+\frac{
+\frac{\ell^2}{r^3}
+-
+\frac{GM}{r^2}
+}{v}.
+\]
+</p>
+
+<p>
+Multiplying through gives
+</p>
+
+<p>
+\[
+v\,dv
+-
+\left(
+\frac{\ell^2}{r^3}
+-
+\frac{GM}{r^2}
+\right)dr
+=
+0.
+\]
+</p>
+
+<p>
+This has the form
+</p>
+
+<p>
+\[
+P(r,v)\,dr + Q(r,v)\,dv = 0,
+\]
+</p>
+
+<p>
+where
+</p>
+
+<p>
+\[
+P(r,v)
+=
+-\frac{\ell^2}{r^3}
++
+\frac{GM}{r^2},
+\qquad
+Q(r,v)=v.
+\]
+</p>
+
+<p>
+The exactness condition is
+</p>
+
+<p>
+\[
+\frac{\partial P}{\partial v}
+=
+\frac{\partial Q}{\partial r}.
+\]
+</p>
+
+<p>
+Here,
+</p>
+
+<p>
+\[
+\frac{\partial P}{\partial v}=0,
+\qquad
+\frac{\partial Q}{\partial r}=0.
+\]
+</p>
+
+<p>
+Therefore the differential form is exact, so there exists a function \(E(r,v)\) satisfying
+</p>
+
+<p>
+\[
+dE = P(r,v)\,dr + Q(r,v)\,dv.
+\]
+</p>
+
+<p>
+To find \(E\), integrate \(Q(r,v)=v\) with respect to \(v\):
+</p>
+
+<p>
+\[
+E(r,v)
+=
+\frac{1}{2}v^2 + f(r).
+\]
+</p>
+
+<p>
+Differentiating with respect to \(r\) gives
+</p>
+
+<p>
+\[
+\frac{\partial E}{\partial r}
+=
+f'(r).
+\]
+</p>
+
+<p>
+Matching this with \(P(r,v)\), we get
+</p>
+
+<p>
+\[
+f'(r)
+=
+-\frac{\ell^2}{r^3}
++
+\frac{GM}{r^2}.
+\]
+</p>
+
+<p>
+Integrating,
+</p>
+
+<p>
+\[
+f(r)
+=
+\frac{\ell^2}{2r^2}
+-
+\frac{GM}{r}.
+\]
+</p>
+
+<p>
+Thus the conserved quantity is
+</p>
+
+<p>
+\[
+E(r,v)
+=
+\frac{1}{2}v^2
++
+\frac{\ell^2}{2r^2}
+-
+\frac{GM}{r}.
+\]
+</p>
+
+<p>
+The significance of this calculation is not just that a conserved quantity exists. 
+It explains the geometry of the phase portrait. Since \(E(r,v)\) remains constant along trajectories,
+solutions are confined to level curves of \(E\). The closed orbits seen in the phase portrait are therefore not accidental but 
+they are a direct consequence of the conserved structure of the system.
+</p>
+    
 </body>
 </html>
