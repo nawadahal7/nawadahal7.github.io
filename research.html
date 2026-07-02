@@ -2,57 +2,175 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research | Nawa Dahal</title>
+
+    <meta name="description" content="Research projects of Nawa Dahal in numerical analysis, nonlinear PDEs, semiconductor modeling, Richardson extrapolation, Poisson-Boltzmann equations, and solar-cell simulation.">
+
+    <style>
+        body {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            font-family: Georgia, serif;
+            line-height: 1.7;
+            color: #222;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            margin-top: 28px;
+        }
+
+        a {
+            color: #1f5aa6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            margin-right: 15px;
+        }
+
+        .status {
+            color: #555;
+            font-style: italic;
+        }
+    </style>
 </head>
+
 <body>
-<p>
-<a href="index.html">Home</a> |
-<a href="research.html">Research</a> |
-<a href="notes.html">Notes & Thoughts</a>
-</p>
 
-<h1>Research</h1>
-<p>
-My research interests lie in numerical analysis, nonlinear partial differential equations,
-and scientific computing. I am particularly interested in problems where physical modeling,
-mathematical analysis, and computation interact.
-</p>
-<h2>A Matrix-Based Perspective on Multi-Level Richardson Extrapolation</h2>
-<p>
-This project investigates multi-level Richardson extrapolation methods for numerical integration.
-The work focuses on error reduction, finite-precision effects, conditioning, and numerical stability.
-A manuscript based on this work was submitted to SIAM Undergraduate Research Online (SIURO).
-</p>
-<h2>Numerical Investigation of the Poisson–Boltzmann Equation</h2>
-<p>
-This honors thesis explores finite-difference discretizations and iterative methods for nonlinear
-Poisson–Boltzmann equations arising in semiconductor modeling. The project includes the analysis
-of fixed-point, Newton, and quasi-linearization methods, together with MATLAB implementations
-and numerical experiments.
-</p>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="notes.html">Notes & Thoughts</a>
+    <a href="CV.pdf" target="_blank">CV</a>
+</nav>
 
-<p>
-One outcome of this project was a research poster presented at San José State University Research Day. The poster can be viewed here:
-<a href="poisson-boltzmann-poster.pdf" target="_blank">
-Research Poster (PDF)
-</a>
-</p>
+<main>
 
-</p>
-An honors thesis based on this work has been completed. 
-Portions of the project are being developed further as 
-part of ongoing research, and the thesis is therefore not currently posted online.
-</p>
+    <h1>Research</h1>
 
-<h2>Modeling and Numerical Simulation of Solar Cells</h2>
-<p>
-This ongoing project extends previous semiconductor drift–diffusion–Poisson modeling work
-to photovoltaic and solar-cell applications. Current interests include photogeneration,
-carrier transport, recombination mechanisms, current–voltage characteristics, power generation,
-fill factor, and device efficiency.
-</p>
-<p>
-<a href="index.html">← Back to Home</a>
-</p>
+    <p>
+        My research lives at the intersection of numerical analysis, nonlinear partial differential equations,
+        and scientific computing. Across different projects, I am interested in understanding how numerical
+        methods behave: why they converge, when they fail, how finite precision affects computation, and how
+        mathematical analysis can guide better algorithms for physically motivated problems.
+    </p>
+
+    <p>
+        A lot of my current work is connected by one larger question: how do we reliably compute solutions to
+        nonlinear models from physics without losing the mathematical structure of the problem?
+    </p>
+
+    <h2>Current Research Program</h2>
+
+    <h3>Semiconductor Modeling, Volume I: The Poisson–Boltzmann Equation</h3>
+
+    <p class="status">
+        Honors thesis completed · Poster presented · Ongoing extensions
+    </p>
+
+    <p>
+        This project studies finite-difference discretizations and iterative methods for nonlinear
+        Poisson–Boltzmann equations arising in semiconductor modeling. The work includes the analysis of
+        fixed-point, Newton, and quasi-linearization methods, together with MATLAB implementations and
+        numerical experiments.
+    </p>
+
+    <p>
+        One major theme of this project is convergence: not just whether an iteration works, but why it works,
+        how the initial guess affects the computation, and how the structure of the nonlinear equation shows up
+        in the numerical method.
+    </p>
+
+    <p>
+        A research poster based on this project was presented at San José State University Research Day:
+        <a href="poisson-boltzmann-poster.pdf" target="_blank">Research Poster (PDF)</a>.
+    </p>
+
+    <p>
+        An honors thesis based on this work has been completed. Portions of the project are being developed
+        further as part of ongoing research, so the thesis is not currently posted online.
+    </p>
+
+    <h3>Semiconductor Modeling, Volume II: Solar-Cell Simulation</h3>
+
+    <p class="status">
+        Ongoing
+    </p>
+
+    <p>
+        This project extends my previous semiconductor drift–diffusion–Poisson modeling work to photovoltaic
+        and solar-cell applications. Current interests include photogeneration, carrier transport, recombination
+        mechanisms, current–voltage characteristics, power generation, fill factor, and device efficiency.
+    </p>
+
+    <p>
+        Conceptually, I think of this as the next layer of the semiconductor project. The Poisson–Boltzmann
+        work helped me understand nonlinear electrostatic models and iterative solvers; the solar-cell direction
+        adds transport, generation, recombination, and performance quantities that connect the mathematics more
+        directly to device behavior.
+    </p>
+
+    <h2>Completed and Submitted Work</h2>
+
+    <h3>A Matrix-Based Perspective on Multi-Level Richardson Extrapolation</h3>
+
+    <p class="status">
+        Manuscript submitted to SIAM Undergraduate Research Online (SIURO)
+    </p>
+
+    <p>
+        This project investigates multi-level Richardson extrapolation methods for numerical integration.
+        The work focuses on error reduction, finite-precision effects, conditioning, and numerical stability.
+    </p>
+
+    <p>
+        What started as a numerical integration project became a study of how extrapolation behaves under
+        finite precision. In exact arithmetic, adding more extrapolation levels can improve the order of
+        accuracy. In floating-point arithmetic, however, the weights can grow, conditioning can deteriorate,
+        and roundoff error can eventually dominate. That tension between theoretical accuracy and numerical
+        stability became the main mathematical theme of the project.
+    </p>
+
+    <h2>Future Directions</h2>
+
+    <p>
+        Some directions I am currently interested in exploring further include asymptotic analysis, singular
+        perturbation methods, numerical methods for nonlinear PDEs, dynamical systems, and mathematical models
+        arising from physics.
+    </p>
+
+    <p>
+        These are not separate from my current work. They are the kinds of mathematical tools and viewpoints
+        that keep appearing whenever I try to understand why a numerical method behaves the way it does.
+    </p>
+
+    <p>
+        <a href="index.html">← Back to Home</a>
+    </p>
+
+</main>
+
 </body>
 </html>
