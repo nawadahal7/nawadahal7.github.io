@@ -6,51 +6,47 @@
 
     <title>Nawa Dahal</title>
 
-    <meta name="description" content="Personal mathematical website of Nawa Dahal: research, mathematical essays, unfinished ideas, and reflections.">
+    <meta
+        name="description"
+        content="Personal mathematical website of Nawa Dahal: research, mathematical essays, unfinished ideas, and reflections."
+    >
     <meta name="author" content="Nawa Dahal">
 
     <meta property="og:title" content="Nawa Dahal">
-    <meta property="og:description" content="Research, essays, reflections, and mathematical thoughts from Nawa Dahal.">
+    <meta
+        property="og:description"
+        content="Research, essays, reflections, and mathematical thoughts from Nawa Dahal."
+    >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nawadahal7.github.io/">
     <meta property="og:image" content="https://nawadahal7.github.io/profile.jpg">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto;
             padding: 40px;
             font-family: Georgia, serif;
+            font-size: 16px;
             line-height: 1.7;
             color: #222;
-            background-color: #ffffff;
+            background-color: #fff;
         }
 
-        .profile-photo {
-            width: 170px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 18px;
+        nav {
+            margin-bottom: 30px;
         }
 
-        h1 {
-            font-size: 2.7em;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            margin-top: 42px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-
-        h3 {
-            margin-top: 28px;
+        nav a {
+            margin-right: 15px;
         }
 
         a {
@@ -62,37 +58,57 @@
             text-decoration: underline;
         }
 
-        nav {
-            margin-bottom: 30px;
+        header {
+            margin-bottom: 24px;
         }
 
-        nav a {
-            margin-right: 15px;
+        .profile-photo {
+            display: block;
+            width: 170px;
+            height: 170px;
+            margin-bottom: 18px;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
-        nav a[aria-current="page"] {
-            color: #222;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+        h1 {
+            margin: 0 0 5px;
+            font-size: 2.7em;
+            line-height: 1.2;
+        }
+
+        h2 {
+            margin-top: 42px;
+            margin-bottom: 18px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h3 {
+            margin-top: 28px;
+        }
+
+        p {
+            margin: 0 0 16px;
         }
 
         details.project {
-            margin-top: 18px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #eeeeee;
+            margin: 0;
+            padding: 17px 0;
+            border-bottom: 1px solid #e5e5e5;
             scroll-margin-top: 25px;
         }
 
-        details.project:last-of-type {
-            border-bottom: none;
+        details.project:first-of-type {
+            border-top: 1px solid #e5e5e5;
         }
 
         details.project summary {
             cursor: pointer;
             color: #1f5aa6;
-            font-size: 1.17em;
+            font-size: 1.08em;
             font-weight: bold;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         details.project summary:hover {
@@ -100,11 +116,20 @@
         }
 
         details.project[open] summary {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
+        }
+
+        .project-content {
+            padding-left: 20px;
         }
 
         .project-meta {
+            margin-bottom: 16px;
             color: #444;
+        }
+
+        .project-links {
+            margin-bottom: 10px;
         }
 
         .research-equation {
@@ -112,8 +137,8 @@
         }
 
         .research-figure {
-            max-width: 800px;
-            margin: 28px auto;
+            max-width: 760px;
+            margin: 26px auto;
         }
 
         .research-figure img {
@@ -123,23 +148,42 @@
         }
 
         .research-figure figcaption {
-            margin-top: 5px;
+            margin-top: 6px;
             font-size: 0.9em;
             color: #555;
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 24px;
-            }
+        #contact {
+            margin-bottom: 20px;
+        }
 
-            h1 {
-                font-size: 2.2em;
+        @media (max-width: 650px) {
+            body {
+                padding: 24px 20px;
+                font-size: 15px;
             }
 
             nav a {
                 display: inline-block;
-                margin-bottom: 8px;
+                margin-right: 12px;
+                margin-bottom: 7px;
+            }
+
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            h1 {
+                font-size: 2.25em;
+            }
+
+            h2 {
+                margin-top: 34px;
+            }
+
+            .project-content {
+                padding-left: 12px;
             }
         }
     </style>
@@ -147,261 +191,322 @@
 
 <body>
 
-<nav>
-    <a href="#research">Research</a>
-    <a href="Expository_Notes_in_Dynamical_Systems.pdf" target="_blank" rel="noopener noreferrer">Expository Notes</a>
-    <a href="nawa-dahal-cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <nav>
+        <a href="#research">Research</a>
+        <a
+            href="Expository_Notes_in_Dynamical_Systems.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+        >Expository Notes</a>
+        <a
+            href="nawa-dahal-cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+        >CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<header>
-    <img src="profile.jpg" alt="Photo of Nawa Dahal" class="profile-photo">
-    <h1>Nawa Dahal</h1>
-</header>
+    <header>
+        <img
+            src="profile.jpg"
+            alt="Photo of Nawa Dahal"
+            class="profile-photo"
+        >
+        <h1>Nawa Dahal</h1>
+    </header>
 
-<main>
+    <main>
 
-    <section>
-        <p>
-            My name is Nawaraj Dahal. But if you're connected to the Department of Mathematics and
-            Statistics at SJSU or went to De Anza College during my time there
-            (Sept. 2022 - Jun. 2025), then there is a non-zero chance that you know me simply as
-            "Nawa".
-        </p>
-
-        <p>
-            I'm an undergraduate student in Applied and Computational Mathematics at San José State University.
-            My mathematical interests include nonlinear partial differential equations, numerical analysis,
-            scientific computing, dynamical systems, and problems where physical modeling, mathematical analysis,
-            and computation interact.
-        </p>
-
-        <p>
-            This is a place for research, mathematical essays, unfinished ideas,
-            and the questions that keep me up at night. Basically, a place to nerd out about mathematics.
-        </p>
-    </section>
-
-    <section id="research">
-        <h2>Research</h2>
-
-        <details class="project" id="semiconductor-thesis">
-            <summary>
-                Analysis and Numerical Investigation of Nonlinear Semiconductor Drift–Diffusion Systems
-            </summary>
-
-            <p class="project-meta">
-                Honors Research Thesis · San José State University · July 2026<br>
-                Advisor: Dr. Daniel Brinkman
+        <section>
+            <p>
+                My name is Nawaraj Dahal. But if you're connected to the Department
+                of Mathematics and Statistics at SJSU or went to De Anza College
+                during my time there (Sept. 2022–Jun. 2025), then there is a non-zero
+                chance that you know me simply as "Nawa."
             </p>
 
             <p>
-                I investigated one-dimensional semiconductor p–n junction models governed by coupled nonlinear
-                Poisson–Boltzmann and drift–diffusion equations. I developed and analyzed finite-difference and
-                Scharfetter–Gummel discretizations, studied convergence through contraction arguments and spectral
-                properties of the discrete Laplacian, and showed that the quasi-linearized Poisson–Boltzmann iteration
-                is mathematically equivalent to Newton’s method for the discrete system. I then implemented a
-                quasi-linearized Gummel solver for equilibrium and applied-bias conditions, obtaining current-conserving
-                numerical solutions and J–V characteristics consistent with the expected behavior of a silicon diode
-                and the classical Shockley model.
+                I'm an undergraduate student in Applied and Computational Mathematics
+                at San José State University. My mathematical interests include
+                nonlinear partial differential equations, numerical analysis,
+                scientific computing, dynamical systems, and problems where physical
+                modeling, mathematical analysis, and computation interact.
             </p>
 
             <p>
-                This work resulted in an honors thesis and a poster presented at
-                SJSU Research Day, both available below.
+                This is a place for research, mathematical essays, unfinished ideas,
+                and the questions that keep me up at night. Basically, a place to
+                nerd out about mathematics.
             </p>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+
+            <details class="project" id="semiconductor-thesis">
+                <summary>
+                    Analysis and Numerical Investigation of Nonlinear Semiconductor
+                    Drift–Diffusion Systems
+                </summary>
+
+                <div class="project-content">
+                    <p class="project-meta">
+                        Honors Research Thesis · San José State University · July 2026<br>
+                        Advisor: Dr. Daniel Brinkman
+                    </p>
+
+                    <p>
+                        I investigated one-dimensional semiconductor p–n junction
+                        models governed by coupled nonlinear Poisson–Boltzmann and
+                        drift–diffusion equations. I developed and analyzed
+                        finite-difference and Scharfetter–Gummel discretizations,
+                        studied convergence through contraction arguments and spectral
+                        properties of the discrete Laplacian, and showed that the
+                        quasi-linearized Poisson–Boltzmann iteration is mathematically
+                        equivalent to Newton's method for the discrete system.
+                    </p>
+
+                    <p>
+                        I then implemented a quasi-linearized Gummel solver for
+                        equilibrium and applied-bias conditions, obtaining
+                        current-conserving numerical solutions and
+                        <em>J</em>–<em>V</em> characteristics consistent with the
+                        expected behavior of a silicon diode and the classical
+                        Shockley model.
+                    </p>
+
+                    <p>
+                        This work resulted in an honors thesis and a poster presented
+                        at SJSU Research Day.
+                    </p>
+
+                    <p class="project-links">
+                        <a
+                            href="nawa-dahal-honors-thesis.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Honors Thesis (PDF)</a>
+                        ·
+                        <a
+                            href="poisson-boltzmann-poster.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Research Day Poster (PDF)</a>
+                    </p>
+                </div>
+            </details>
+
+            <details class="project" id="photovoltaic-extension">
+                <summary>
+                    Photovoltaic Extension of a Drift–Diffusion–Poisson Solver
+                </summary>
+
+                <div class="project-content">
+                    <p class="project-meta">
+                        Independent post-thesis extension · Summer 2026
+                    </p>
+
+                    <p>
+                        Building on the numerical framework developed in my honors
+                        thesis, I extended my one-dimensional steady-state
+                        drift–diffusion–Poisson solver from dark p–n junction transport
+                        to illuminated solar-cell simulation. Optical generation was
+                        modeled using the Beer–Lambert law,
+                    </p>
+
+                    <p class="research-equation">
+                        <em>G</em>(<em>x</em>) =
+                        <em>G</em><sub>0</sub>e<sup>−<em>αx</em></sup>,
+                    </p>
+
+                    <p>
+                        and incorporated into the electron and hole continuity
+                        equations through the net source term
+                        <em>U</em> = <em>R</em> − <em>G</em>, where
+                        <em>R</em> is Shockley–Read–Hall recombination. At each terminal
+                        voltage, I coupled a quasi-linearized Poisson solve with
+                        Scharfetter–Gummel discretizations of the carrier-continuity
+                        equations inside a Gummel iteration.
+                    </p>
+
+                    <p>
+                        A terminal-voltage sweep produced the illuminated
+                        <em>J</em>–<em>V</em> characteristic and allowed me to compute
+                        the short-circuit current density, open-circuit voltage,
+                        maximum-power point, and fill factor.
+                    </p>
+
+                    <figure class="research-figure">
+                        <img
+                            src="solar-cell-jv-mpp.png"
+                            alt="Scaled illuminated current-voltage curve showing the short-circuit current density, open-circuit voltage, and maximum-power point."
+                            loading="lazy"
+                        >
+                        <figcaption>
+                            Scaled illuminated <em>J</em>–<em>V</em> characteristic
+                            of the simulated p–n junction.
+                        </figcaption>
+                    </figure>
+                </div>
+            </details>
+
+            <details class="project" id="two-dimensional-semiconductors">
+                <summary>
+                    Two-Dimensional Semiconductor and PNP Transistor Modeling
+                </summary>
+
+                <div class="project-content">
+                    <p class="project-meta">
+                        Ongoing research · Fall 2026<br>
+                        Advisor: Dr. Daniel Brinkman
+                    </p>
+
+                    <p>
+                        I am extending the steady-state drift–diffusion–Poisson
+                        framework from one spatial dimension to two. This requires
+                        adapting the coupled nonlinear solver to two-dimensional device
+                        geometries, imposing different boundary conditions on
+                        electrical contacts and insulated boundary segments, and
+                        examining convergence and current conservation in the
+                        higher-dimensional setting.
+                    </p>
+
+                    <p>
+                        I have developed a working simulation of a planar PNP
+                        transistor with separate emitter, base, and collector contacts.
+                        The next goal is to investigate a differential-algebraic
+                        equation formulation as an alternative mathematical framework
+                        for the coupled semiconductor system.
+                    </p>
+                </div>
+            </details>
+
+            <details class="project" id="richardson-extrapolation">
+                <summary>
+                    A Matrix-Based Perspective on Multi-Level Richardson Extrapolation
+                </summary>
+
+                <div class="project-content">
+                    <p class="project-meta">
+                        Single-author paper · SIAM Undergraduate Research Online,
+                        Volume 19, 2026<br>
+                        Project advisor: Dr. Mohammad Saleem
+                    </p>
+
+                    <p>
+                        I studied multi-level Richardson extrapolation for numerical
+                        integration from a linear-algebraic perspective. I formulated
+                        the extrapolation weights through a Vandermonde-type system
+                        and interpreted them as Lagrange interpolation weights
+                        evaluated at the origin.
+                    </p>
+
+                    <p>
+                        The analysis examines how truncation-error cancellation
+                        competes with matrix conditioning, extrapolation-weight
+                        growth, computational cost, and floating-point roundoff.
+                        MATLAB experiments with smooth, insufficiently smooth, and
+                        highly oscillatory integrands demonstrate a problem-dependent
+                        stability window in which additional extrapolation first
+                        improves accuracy and eventually becomes ineffective or
+                        unstable.
+                    </p>
+
+                    <p class="project-links">
+                        <a
+                            href="https://doi.org/10.1137/26S1857207"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Published Paper</a>
+                        ·
+                        <a
+                            href="https://www.siam.org/media/ixnd5ck3/s185720r.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >PDF</a>
+                    </p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Expository Notes</h2>
+
+            <h3>Expository Notes in Dynamical Systems</h3>
 
             <p>
-                <a href="nawa-dahal-honors-thesis.pdf"
-                   target="_blank"
-                   rel="noopener noreferrer">Honors Thesis (PDF)</a>
-                &nbsp;·&nbsp;
-                <a href="poisson-boltzmann-poster.pdf"
-                   target="_blank"
-                   rel="noopener noreferrer">Research Day Poster (PDF)</a>
+                <a
+                    href="Expository_Notes_in_Dynamical_Systems.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Expository Notes in Dynamical Systems (PDF)</a>
             </p>
-        </details>
+        </section>
 
-        <details class="project" id="photovoltaic-extension">
-            <summary>
-                Photovoltaic Extension of a Drift–Diffusion–Poisson Solver
-            </summary>
-
-            <p class="project-meta">
-                Independent post-thesis extension · Summer 2026
-            </p>
+        <section>
+            <h2>Curriculum Vitae</h2>
 
             <p>
-                Building on the numerical framework developed in my honors thesis, I extended my
-                one-dimensional steady-state drift–diffusion–Poisson solver from dark p–n junction transport to
-                illuminated solar-cell simulation. Optical generation was modeled using the Beer–Lambert law,
+                <a
+                    href="nawa-dahal-cv.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Curriculum Vitae (PDF)</a>
             </p>
+        </section>
 
-            <p class="research-equation">
-                <em>G</em>(<em>x</em>) =
-                <em>G</em><sub>0</sub>e<sup>−<em>αx</em></sup>,
-            </p>
+        <section id="contact">
+            <h2>Contact</h2>
 
             <p>
-                and incorporated into the electron and hole continuity equations through the net source term
-                <em>U</em> = <em>R</em> − <em>G</em>, where <em>R</em> is Shockley–Read–Hall recombination.
-                At each terminal voltage, I coupled a quasi-linearized Poisson solve with Scharfetter–Gummel
-                discretizations of the carrier-continuity equations inside a Gummel iteration. A terminal-voltage
-                sweep then produced the illuminated <em>J</em>–<em>V</em> characteristic and allowed me to compute
-                the short-circuit current density, open-circuit voltage, maximum-power point, and fill factor.
+                Email:
+                <a href="mailto:nawaraj.dahal@sjsu.edu">
+                    nawaraj.dahal@sjsu.edu
+                </a>
+                <br>
+
+                LinkedIn:
+                <a
+                    href="https://www.linkedin.com/in/nawadahal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >nawadahal</a>
+                <br>
+
+                GitHub:
+                <a
+                    href="https://github.com/nawadahal7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >nawadahal7</a>
             </p>
+        </section>
 
-            <p>
-                Among the computational results produced by this extension, the illuminated
-                <em>J</em>–<em>V</em> curve below is my favorite. The marked points show the
-                short-circuit current density <em>J</em><sub>sc</sub>, open-circuit voltage
-                <em>V</em><sub>oc</sub>, and maximum-power point <em>MPP</em>. The shaded rectangle
-                represents the maximum output-power density,
-                <em>P</em><sub>max</sub> =
-                <em>V</em><sub>m</sub><em>J</em><sub>m</sub>.
-            </p>
+    </main>
 
-            <figure class="research-figure">
-                <img src="solar-cell-jv-mpp.png"
-                     width="2898"
-                     height="1887"
-                     alt="Scaled illuminated J–V curve decreasing from the short-circuit current density Jsc at zero voltage to the open-circuit voltage Voc at zero current. The maximum-power point is marked near the bend, and a shaded rectangle represents the maximum output-power density."
-                     loading="lazy">
+    <script>
+        function openProjectFromHash() {
+            if (!window.location.hash) {
+                return;
+            }
 
-                <figcaption>
-                    Scaled illuminated <em>J</em>–<em>V</em> characteristic of the simulated p–n junction.
-                </figcaption>
-            </figure>
-        </details>
+            const target = document.querySelector(window.location.hash);
 
-        <details class="project" id="two-dimensional-semiconductors">
-            <summary>
-                Two-Dimensional Semiconductor and PNP Transistor Modeling
-            </summary>
+            if (target && target.tagName.toLowerCase() === "details") {
+                target.open = true;
 
-            <p class="project-meta">
-                Ongoing research · Fall 2026<br>
-                Advisor: Dr. Daniel Brinkman
-            </p>
-
-            <p>
-                I extended the one-dimensional steady-state drift–diffusion–Poisson framework to two
-                spatial dimensions and developed a planar PNP transistor model with emitter, base,
-                and collector contacts. The model combines a two-dimensional finite-difference
-                discretization with mixed Ohmic and insulating boundary conditions and a
-                physics-informed initialization inside a Gummel iteration. The current solver
-                converges under the chosen bias conditions and produces terminal currents satisfying
-                current balance.
-            </p>
-
-            <p>
-                I am now studying how device geometry, boundary conditions, and model parameters
-                affect the numerical solution and terminal behavior. The next goal is to investigate
-                a differential-algebraic-equation formulation as an alternative to the linearized
-                Poisson solve used in the current Gummel iteration.
-            </p>
-        </details>
-
-        <details class="project" id="richardson-extrapolation">
-            <summary>
-                A Matrix-Based Perspective on Multi-Level Richardson Extrapolation
-            </summary>
-
-            <p class="project-meta">
-                Single-author paper · Published in
-                <em>SIAM Undergraduate Research Online</em>, Volume 19, pp. 409–428 (2026)<br>
-                Project advisor: Dr. Mohammad Saleem
-            </p>
-
-            <p>
-                I studied multi-level Richardson extrapolation for numerical integration from a
-                linear-algebraic perspective. I formulated the extrapolation weights through a
-                Vandermonde-type system and interpreted them as Lagrange interpolation weights
-                evaluated at the origin. The analysis examines how truncation-error cancellation
-                competes with matrix conditioning, extrapolation-weight growth, computational cost,
-                and floating-point roundoff. MATLAB experiments with smooth, nonsmooth, and highly
-                oscillatory integrands demonstrate a problem-dependent stability window in which
-                additional extrapolation first improves accuracy and eventually becomes ineffective
-                or unstable.
-            </p>
-
-            <p>
-                <a href="https://doi.org/10.1137/26S1857207"
-                   target="_blank"
-                   rel="noopener noreferrer">Published Article (DOI)</a>
-            </p>
-        </details>
-
-    </section>
-
-    <section>
-        <h2>Expository Notes</h2>
-
-        <h3>Expository Notes in Dynamical Systems</h3>
-
-        <p>
-            <a href="Expository_Notes_in_Dynamical_Systems.pdf"
-               target="_blank"
-               rel="noopener noreferrer">
-                <strong>Expository Notes in Dynamical Systems (PDF)</strong>
-            </a>
-        </p>
-    </section>
-
-    <section>
-        <h2>Curriculum Vitae</h2>
-
-        <p>
-            <a href="nawa-dahal-cv.pdf"
-               target="_blank"
-               rel="noopener noreferrer">Curriculum vitae (PDF)</a>
-        </p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-
-        <p>
-            Email:
-            <a href="mailto:nawaraj.dahal@sjsu.edu">nawaraj.dahal@sjsu.edu</a><br>
-
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/nawadahal"
-               target="_blank"
-               rel="noopener noreferrer">nawadahal</a><br>
-
-            GitHub:
-            <a href="https://github.com/nawadahal7"
-               target="_blank"
-               rel="noopener noreferrer">nawadahal7</a>
-        </p>
-    </section>
-
-</main>
-
-<script>
-    function openLinkedProject() {
-        if (!window.location.hash) {
-            return;
+                window.setTimeout(function () {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }, 100);
+            }
         }
 
-        const project = document.querySelector(window.location.hash);
-
-        if (project && project.tagName.toLowerCase() === "details") {
-            project.open = true;
-
-            setTimeout(function () {
-                project.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }, 50);
-        }
-    }
-
-    window.addEventListener("DOMContentLoaded", openLinkedProject);
-    window.addEventListener("hashchange", openLinkedProject);
-</script>
+        window.addEventListener("DOMContentLoaded", openProjectFromHash);
+        window.addEventListener("hashchange", openProjectFromHash);
+    </script>
 
 </body>
 </html>
