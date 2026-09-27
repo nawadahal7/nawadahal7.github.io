@@ -6,17 +6,11 @@
 
     <title>Nawa Dahal</title>
 
-    <meta
-        name="description"
-        content="Personal mathematical website of Nawa Dahal: research, mathematical essays, unfinished ideas, and reflections."
-    >
+    <meta name="description" content="Personal mathematical website of Nawa Dahal: research, mathematical essays, unfinished ideas, and reflections.">
     <meta name="author" content="Nawa Dahal">
 
     <meta property="og:title" content="Nawa Dahal">
-    <meta
-        property="og:description"
-        content="Research, essays, reflections, and mathematical thoughts from Nawa Dahal."
-    >
+    <meta property="og:description" content="Research, essays, reflections, and mathematical thoughts from Nawa Dahal.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nawadahal7.github.io/">
     <meta property="og:image" content="https://nawadahal7.github.io/profile.jpg">
@@ -59,10 +53,6 @@
             margin-top: 28px;
         }
 
-        article {
-            scroll-margin-top: 25px;
-        }
-
         a {
             color: #1f5aa6;
             text-decoration: none;
@@ -70,10 +60,6 @@
 
         a:hover {
             text-decoration: underline;
-        }
-
-        ul {
-            padding-left: 20px;
         }
 
         nav {
@@ -88,6 +74,37 @@
             color: #222;
             text-decoration: underline;
             text-underline-offset: 3px;
+        }
+
+        details.project {
+            margin-top: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #eeeeee;
+            scroll-margin-top: 25px;
+        }
+
+        details.project:last-of-type {
+            border-bottom: none;
+        }
+
+        details.project summary {
+            cursor: pointer;
+            color: #1f5aa6;
+            font-size: 1.17em;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        details.project summary:hover {
+            text-decoration: underline;
+        }
+
+        details.project[open] summary {
+            margin-bottom: 14px;
+        }
+
+        .project-meta {
+            color: #444;
         }
 
         .research-equation {
@@ -132,25 +149,13 @@
 
 <nav>
     <a href="#research">Research</a>
-    <a
-        href="Expository_Notes_in_Dynamical_Systems.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-    >Expository Notes</a>
-    <a
-        href="nawa-dahal-cv.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-    >CV</a>
+    <a href="Expository_Notes_in_Dynamical_Systems.pdf" target="_blank" rel="noopener noreferrer">Expository Notes</a>
+    <a href="nawa-dahal-cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <header>
-    <img
-        src="profile.jpg"
-        alt="Photo of Nawa Dahal"
-        class="profile-photo"
-    >
+    <img src="profile.jpg" alt="Photo of Nawa Dahal" class="profile-photo">
     <h1>Nawa Dahal</h1>
 </header>
 
@@ -160,81 +165,76 @@
         <p>
             My name is Nawaraj Dahal. But if you're connected to the Department of Mathematics and
             Statistics at SJSU or went to De Anza College during my time there
-            (Sept. 2022–Jun. 2025), then there is a non-zero chance that you know me simply as
+            (Sept. 2022 - Jun. 2025), then there is a non-zero chance that you know me simply as
             "Nawa".
         </p>
 
         <p>
-            I'm an undergraduate student in Applied and Computational Mathematics at San José State
-            University. My mathematical interests include nonlinear partial differential equations,
-            numerical analysis, scientific computing, dynamical systems, and problems where physical
-            modeling, mathematical analysis, and computation interact.
+            I'm an undergraduate student in Applied and Computational Mathematics at San José State University.
+            My mathematical interests include nonlinear partial differential equations, numerical analysis,
+            scientific computing, dynamical systems, and problems where physical modeling, mathematical analysis,
+            and computation interact.
         </p>
 
         <p>
-            This is a place for research, mathematical essays, unfinished ideas, and the questions
-            that keep me up at night. Basically, a place to nerd out about mathematics.
+            This is a place for research, mathematical essays, unfinished ideas,
+            and the questions that keep me up at night. Basically, a place to nerd out about mathematics.
         </p>
     </section>
 
     <section id="research">
         <h2>Research</h2>
 
-        <article id="semiconductor-thesis">
-            <h3>
-                Analysis and Numerical Investigation of Nonlinear Semiconductor
-                Drift–Diffusion Systems
-            </h3>
+        <details class="project" id="semiconductor-thesis">
+            <summary>
+                Analysis and Numerical Investigation of Nonlinear Semiconductor Drift–Diffusion Systems
+            </summary>
 
-            <p>
+            <p class="project-meta">
                 Honors Research Thesis · San José State University · July 2026<br>
                 Advisor: Dr. Daniel Brinkman
             </p>
 
             <p>
-                I investigated one-dimensional semiconductor p–n junction models governed by coupled
-                nonlinear Poisson–Boltzmann and drift–diffusion equations. I developed and analyzed
-                finite-difference and Scharfetter–Gummel discretizations, studied convergence through
-                contraction arguments and spectral properties of the discrete Laplacian, and showed
-                that the quasi-linearized Poisson–Boltzmann iteration is mathematically equivalent to
-                Newton’s method for the discrete system. I then implemented a quasi-linearized Gummel
-                solver for equilibrium and applied-bias conditions, obtaining current-conserving
-                numerical solutions and <em>J</em>–<em>V</em> characteristics consistent with the
-                expected behavior of a silicon diode and the classical Shockley model.
+                I investigated one-dimensional semiconductor p–n junction models governed by coupled nonlinear
+                Poisson–Boltzmann and drift–diffusion equations. I developed and analyzed finite-difference and
+                Scharfetter–Gummel discretizations, studied convergence through contraction arguments and spectral
+                properties of the discrete Laplacian, and showed that the quasi-linearized Poisson–Boltzmann iteration
+                is mathematically equivalent to Newton’s method for the discrete system. I then implemented a
+                quasi-linearized Gummel solver for equilibrium and applied-bias conditions, obtaining current-conserving
+                numerical solutions and J–V characteristics consistent with the expected behavior of a silicon diode
+                and the classical Shockley model.
             </p>
 
             <p>
-                This work resulted in an honors thesis and a poster presented at SJSU Research Day,
-                both available below.
+                This work resulted in an honors thesis and a poster presented at
+                SJSU Research Day, both available below.
             </p>
 
             <p>
-                <a
-                    href="nawa-dahal-honors-thesis.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >Honors Thesis (PDF)</a>
+                <a href="nawa-dahal-honors-thesis.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">Honors Thesis (PDF)</a>
                 &nbsp;·&nbsp;
-                <a
-                    href="poisson-boltzmann-poster.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >Research Day Poster (PDF)</a>
+                <a href="poisson-boltzmann-poster.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">Research Day Poster (PDF)</a>
             </p>
-        </article>
+        </details>
 
-        <article id="photovoltaic-extension">
-            <h3>Photovoltaic Extension of a Drift–Diffusion–Poisson Solver</h3>
+        <details class="project" id="photovoltaic-extension">
+            <summary>
+                Photovoltaic Extension of a Drift–Diffusion–Poisson Solver
+            </summary>
 
-            <p>
+            <p class="project-meta">
                 Independent post-thesis extension · Summer 2026
             </p>
 
             <p>
                 Building on the numerical framework developed in my honors thesis, I extended my
-                one-dimensional steady-state drift–diffusion–Poisson solver from dark p–n junction
-                transport to illuminated solar-cell simulation. Optical generation was modeled using
-                the Beer–Lambert law,
+                one-dimensional steady-state drift–diffusion–Poisson solver from dark p–n junction transport to
+                illuminated solar-cell simulation. Optical generation was modeled using the Beer–Lambert law,
             </p>
 
             <p class="research-equation">
@@ -243,14 +243,12 @@
             </p>
 
             <p>
-                and incorporated into the electron and hole continuity equations through the net
-                source term <em>U</em> = <em>R</em> − <em>G</em>, where <em>R</em> is
-                Shockley–Read–Hall recombination. At each terminal voltage, I coupled a
-                quasi-linearized Poisson solve with Scharfetter–Gummel discretizations of the
-                carrier-continuity equations inside a Gummel iteration. A terminal-voltage sweep then
-                produced the illuminated <em>J</em>–<em>V</em> characteristic and allowed me to
-                compute the short-circuit current density, open-circuit voltage, maximum-power point,
-                and fill factor.
+                and incorporated into the electron and hole continuity equations through the net source term
+                <em>U</em> = <em>R</em> − <em>G</em>, where <em>R</em> is Shockley–Read–Hall recombination.
+                At each terminal voltage, I coupled a quasi-linearized Poisson solve with Scharfetter–Gummel
+                discretizations of the carrier-continuity equations inside a Gummel iteration. A terminal-voltage
+                sweep then produced the illuminated <em>J</em>–<em>V</em> characteristic and allowed me to compute
+                the short-circuit current density, open-circuit voltage, maximum-power point, and fill factor.
             </p>
 
             <p>
@@ -264,24 +262,24 @@
             </p>
 
             <figure class="research-figure">
-                <img
-                    src="solar-cell-jv-mpp.png"
-                    width="2898"
-                    height="1887"
-                    alt="Scaled illuminated J–V curve decreasing from the short-circuit current density Jsc at zero voltage to the open-circuit voltage Voc at zero current. The maximum-power point is marked near the bend, and a shaded rectangle from the origin to the maximum-power point represents the maximum output-power density."
-                    loading="lazy"
-                >
+                <img src="solar-cell-jv-mpp.png"
+                     width="2898"
+                     height="1887"
+                     alt="Scaled illuminated J–V curve decreasing from the short-circuit current density Jsc at zero voltage to the open-circuit voltage Voc at zero current. The maximum-power point is marked near the bend, and a shaded rectangle represents the maximum output-power density."
+                     loading="lazy">
+
                 <figcaption>
-                    Scaled illuminated <em>J</em>–<em>V</em> characteristic of the simulated
-                    p–n junction.
+                    Scaled illuminated <em>J</em>–<em>V</em> characteristic of the simulated p–n junction.
                 </figcaption>
             </figure>
-        </article>
+        </details>
 
-        <article id="two-dimensional-semiconductors">
-            <h3>Two-Dimensional Semiconductor and PNP Transistor Modeling</h3>
+        <details class="project" id="two-dimensional-semiconductors">
+            <summary>
+                Two-Dimensional Semiconductor and PNP Transistor Modeling
+            </summary>
 
-            <p>
+            <p class="project-meta">
                 Ongoing research · Fall 2026<br>
                 Advisor: Dr. Daniel Brinkman
             </p>
@@ -302,12 +300,14 @@
                 a differential-algebraic-equation formulation as an alternative to the linearized
                 Poisson solve used in the current Gummel iteration.
             </p>
-        </article>
+        </details>
 
-        <article id="richardson-extrapolation">
-            <h3>A Matrix-Based Perspective on Multi-Level Richardson Extrapolation</h3>
+        <details class="project" id="richardson-extrapolation">
+            <summary>
+                A Matrix-Based Perspective on Multi-Level Richardson Extrapolation
+            </summary>
 
-            <p>
+            <p class="project-meta">
                 Single-author paper · Published in
                 <em>SIAM Undergraduate Research Online</em>, Volume 19, pp. 409–428 (2026)<br>
                 Project advisor: Dr. Mohammad Saleem
@@ -326,41 +326,35 @@
             </p>
 
             <p>
-                <a
-                    href="https://doi.org/10.1137/26S1857207"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >Published Article (DOI)</a>
+                <a href="https://doi.org/10.1137/26S1857207"
+                   target="_blank"
+                   rel="noopener noreferrer">Published Article (DOI)</a>
             </p>
-        </article>
+        </details>
 
     </section>
 
-    <section id="expository-notes">
+    <section>
         <h2>Expository Notes</h2>
 
         <h3>Expository Notes in Dynamical Systems</h3>
 
         <p>
-            <a
-                href="Expository_Notes_in_Dynamical_Systems.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <a href="Expository_Notes_in_Dynamical_Systems.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
                 <strong>Expository Notes in Dynamical Systems (PDF)</strong>
             </a>
         </p>
     </section>
 
-    <section id="curriculum-vitae">
+    <section>
         <h2>Curriculum Vitae</h2>
 
         <p>
-            <a
-                href="nawa-dahal-cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-            >Curriculum vitae (PDF)</a>
+            <a href="nawa-dahal-cv.pdf"
+               target="_blank"
+               rel="noopener noreferrer">Curriculum vitae (PDF)</a>
         </p>
     </section>
 
@@ -372,22 +366,42 @@
             <a href="mailto:nawaraj.dahal@sjsu.edu">nawaraj.dahal@sjsu.edu</a><br>
 
             LinkedIn:
-            <a
-                href="https://www.linkedin.com/in/nawadahal"
-                target="_blank"
-                rel="noopener noreferrer"
-            >nawadahal</a><br>
+            <a href="https://www.linkedin.com/in/nawadahal"
+               target="_blank"
+               rel="noopener noreferrer">nawadahal</a><br>
 
             GitHub:
-            <a
-                href="https://github.com/nawadahal7"
-                target="_blank"
-                rel="noopener noreferrer"
-            >nawadahal7</a>
+            <a href="https://github.com/nawadahal7"
+               target="_blank"
+               rel="noopener noreferrer">nawadahal7</a>
         </p>
     </section>
 
 </main>
+
+<script>
+    function openLinkedProject() {
+        if (!window.location.hash) {
+            return;
+        }
+
+        const project = document.querySelector(window.location.hash);
+
+        if (project && project.tagName.toLowerCase() === "details") {
+            project.open = true;
+
+            setTimeout(function () {
+                project.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }, 50);
+        }
+    }
+
+    window.addEventListener("DOMContentLoaded", openLinkedProject);
+    window.addEventListener("hashchange", openLinkedProject);
+</script>
 
 </body>
 </html>
